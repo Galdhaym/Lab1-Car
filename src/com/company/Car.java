@@ -42,11 +42,11 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Машина:" +
-                "Марка машины :'" + carModel + "\n" +
-                "Производитель :'" + producer + "\n" +
-                "Грузоподьемность :" + liftingCapacity + "\n" +
-                "Год выпуска :" + yearOfProduction + "\n" +
+        return "Машина:" + "\n" +
+                "Марка машины:" + carModel + "\n" +
+                "Производитель:" + producer + "\n" +
+                "Грузоподьемность:" + liftingCapacity + "\n" +
+                "Год выпуска:" + yearOfProduction + "\n" +
                 "Дата регистрации(в формате дд.мм.гггг) :" + DateTimeFormatter.ofPattern("dd.MM.yyyy").format(registrationDate);
     }
 

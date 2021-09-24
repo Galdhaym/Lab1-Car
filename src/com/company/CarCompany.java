@@ -29,7 +29,7 @@ public class CarCompany {
             int liftingCapacity = car.getLiftingCapacity();
 
             if(age > 1 && liftingCapacity > 3) {
-                System.out.println("Машина №"+ i + "\n"+ car);
+                System.out.println("Машина №"+ (i+1) + "\n"+ car);
                 i++;
             }
         }
