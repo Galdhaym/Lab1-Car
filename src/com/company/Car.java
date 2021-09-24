@@ -1,6 +1,7 @@
 package com.company;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Car {
     private String carModel;
@@ -37,6 +38,16 @@ public class Car {
 
     public int getLiftingCapacity() {
         return liftingCapacity;
+    }
+
+    @Override
+    public String toString() {
+        return "Машина:" +
+                "Марка машины :'" + carModel + "\n" +
+                "Производитель :'" + producer + "\n" +
+                "Грузоподьемность :" + liftingCapacity + "\n" +
+                "Год выпуска :" + yearOfProduction + "\n" +
+                "Дата регистрации(в формате дд.мм.гггг) :" + DateTimeFormatter.ofPattern("dd.MM.yyyy").format(registrationDate);
     }
 
     public void setLiftingCapacity(int liftingCapacity) {

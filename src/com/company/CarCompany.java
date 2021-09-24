@@ -1,6 +1,7 @@
 package com.company;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
@@ -28,25 +29,14 @@ public class CarCompany {
             int liftingCapacity = car.getLiftingCapacity();
 
             if(age > 1 && liftingCapacity > 3) {
-                System.out.println("Машина №" + (i + 1) + ":");
-                System.out.println("Марка машины: " + car.getCarModel());
-               System.out.println("Производитель: " + car.getProducer());
-                System.out.println("Грузоподьемность: " + car.getLiftingCapacity());
-                System.out.println("Год выпуска: " + car.getYearOfProduction());
-                System.out.println("Дата регистрации(в формате дд.мм.гггг): " + DateTimeFormatter.ofPattern("dd.MM.yyyy").format(car.getRegistrationDate()));
+                System.out.println("Машина №"+ i + "\n"+ car);
+                i++;
             }
-            i++;
         }
     }
 
     private static int getTotalYears(LocalDate startDate, LocalDate finishDate) {
-        int years = finishDate.getYear() -  startDate.getYear();
-        if(startDate.getMonth().getValue() > finishDate.getMonth().getValue()){
-            years--;
-        }
-        else if(startDate.getDayOfMonth() > finishDate.getDayOfMonth()){
-            years--;
-        }
-        return years;
+        Period period = Period.between(startDate, finishDate);
+        return period.getYears();
     }
 }
