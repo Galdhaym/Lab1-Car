@@ -1,14 +1,23 @@
 package com.company;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Car {
+public class Car implements Serializable {
     private String carModel;
     private String producer;
     private int liftingCapacity;
     private int yearOfProduction;
     private LocalDate registrationDate;
+
+    public Car(String carModel, String producer, int liftingCapacity, int yearOfProduction, LocalDate registrationDate) {
+        this.carModel = carModel;
+        this.producer = producer;
+        this.liftingCapacity = liftingCapacity;
+        this.yearOfProduction = yearOfProduction;
+        this.registrationDate = registrationDate;
+    }
 
     public String getCarModel() {
         return carModel;
